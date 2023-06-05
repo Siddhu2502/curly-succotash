@@ -123,18 +123,18 @@
     <link name = "chaster wheel">
         <visual>
             <geometry>
-                <sphere radius = "0.05"/>
+                <sphere radius = "0.1"/>
             </geometry>
             <material name = "orange"/>
         </visual>
 
         <collision>
             <geometry>
-                <sphere radius = "0.05"/>
+                <sphere radius = "0.1"/>
             </geometry>
         </collision>  
 
-        <xacro:inertial_sphere mass="0.2" radius="0.05">
+        <xacro:inertial_sphere mass="0.2" radius="0.1">
             <origin xyz="0 0 0" rpy="0 0 0" />
         </xacro:inertial_sphere>
 
