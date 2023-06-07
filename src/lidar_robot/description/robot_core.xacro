@@ -26,12 +26,12 @@
 
 
     <!-- first link is called as base link -->
-    <link name="base link">
+    <link name="base_link">
     </link>
 
     <!-- chassis (box with some dimensions) -->
     <joint name="chassis_joint" type="fixed">
-        <parent link="base link"/>
+        <parent link="base_link"/>
         <child link="chassis"/>
         <origin xyz="-0.1 0 0"/>
     </joint>
@@ -59,7 +59,7 @@
 
     <!-- Rear left wheel -->
     <joint name="rear_left_wheel_joint" type="continuous">
-        <parent link="base link"/>
+        <parent link="base_link"/>
         <child link="rear_left_wheel"/>
         <origin xyz="0 0.190 0" rpy="${pi/2} 0 0"/> 
         <axis xyz="0 0 1"/>
@@ -86,7 +86,7 @@
 
     <!-- Rear right wheel -->
     <joint name="rear_right_wheel_joint" type="continuous">
-        <parent link="base link"/>
+        <parent link="base_link"/>
         <child link="rear_right_wheel"/>
         <origin xyz="0 -0.190 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
@@ -113,7 +113,7 @@
 
     <!-- Front left wheel -->
     <joint name="front_left_wheel_joint" type="continuous">
-        <parent link="base link"/>
+        <parent link="base_link"/>
         <child link="front_left_wheel"/>
         <origin xyz="0.23 0.190 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 1"/>
@@ -140,7 +140,7 @@
 
     <!-- Front right wheel -->
     <joint name="front_right_wheel_joint" type="continuous">
-        <parent link="base link"/>
+        <parent link="base_link"/>
         <child link="front_right_wheel"/>
         <origin xyz="0.23 -0.190 0" rpy="${pi/2} 0 0"/>
         <axis xyz="0 0 -1"/>
