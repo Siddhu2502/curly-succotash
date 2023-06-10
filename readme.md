@@ -1,13 +1,8 @@
 # Lidar Robot in ros2 humble 
 
 ## Overview
+This project displays how we make a ros2 lidar obstacle avoidance robot 
+for more docs please strat from [Introduction](/docs/Introduction.md)
 
-This is a repo for creating a ros2 lidar sensor robot in ros2_humble 
-
-.
-
-.
-
-.
-
-more deteils will be updated soon 
+## setup
+This project setup is available in [Setup](/docs/Setup.md)
