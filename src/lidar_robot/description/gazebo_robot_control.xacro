@@ -23,10 +23,12 @@
             <publish_odom_tf>true</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
 
+            <command_topic>cmd_vel</command_topic>
+
 
         </plugin>
 
-            <plugin name="diff_drive_front" filename="libgazebo_ros_diff_drive.so">
+        <plugin name="diff_drive_front" filename="libgazebo_ros_diff_drive.so">
 
             <!-- wheel information -->
             <left_joint>front_left_wheel_joint</left_joint>
@@ -46,6 +48,8 @@
             <publish_odom>true</publish_odom>
             <publish_odom_tf>true</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
+
+            <command_topic>cmd_vel</command_topic>
 
         </plugin>
 
