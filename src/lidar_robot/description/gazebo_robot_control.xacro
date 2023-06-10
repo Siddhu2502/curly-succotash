@@ -49,10 +49,10 @@
             <publish_odom_tf>true</publish_odom_tf>
             <publish_wheel_tf>true</publish_wheel_tf>
 
-            <command_topic>cmd_vel</command_topic>
 
         </plugin>
 
     </gazebo>
+
 
 </robot>
