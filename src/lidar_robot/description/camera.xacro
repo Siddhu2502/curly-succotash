@@ -44,7 +44,7 @@
             <visualize>true</visualize>
             <update_rate>10</update_rate>
             <camera>
-                <horizontal_fov>1.3962634</horizontal_fov> <!-- put actual cam zoom -->
+                <horizontal_fov>1.3962634</horizontal_fov>                <!-- put actual cam zoom -->
                 <image>
                     <width>640</width>
                     <height>200</height>
@@ -59,7 +59,7 @@
             <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
                 <frame_name>camera_frame_optical</frame_name>
             </plugin>
-            
+
         </sensor>
     </gazebo>
 </robot>

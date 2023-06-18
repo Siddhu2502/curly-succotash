@@ -10,6 +10,7 @@ def generate_launch_description():
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     package_name = 'lidar_robot'  # <--- CHANGE ME
+    urdf_path = "/home/siddharth/vscode/class_work/ROS/curly-succotash/src/lidar_robot/description/robot.urdf"
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -23,10 +24,11 @@ def generate_launch_description():
             get_package_share_directory('gazebo_ros'), 'launch', 'gazebo.launch.py')]),
     )
 
+
     # Run the spawner node from the gazebo_ros package. The entity name doesn't really matter if you only have a single robot.
     spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
                         arguments=['-topic', 'robot_description',
-                                   '-entity', 'my_bot'],
+                                   '-entity', urdf_path],
                         output='screen')
 
     # Launch Rviz2 with fixed frame and TF
@@ -35,11 +37,12 @@ def generate_launch_description():
                      get_package_share_directory(package_name), 'config', 'my_rviz_config.rviz'),
                             'Fixed Frame:=odom'],
                  output='screen')
+    
 
     return LaunchDescription([
         rsp,
         gazebo,
-        spawn_entity,
+        spawn_entity,  # Uncomment this line to spawn the robot
         rviz2,
     ])
 
