@@ -1,4 +1,4 @@
-## setup 
+## Setup 
 - Please install ros2 humble (use ubuntu version 22.04+)
 - ```git clone https://github.com/Siddhu2502/curly-succotash```
 
