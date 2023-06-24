@@ -10,7 +10,7 @@ def generate_launch_description():
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     package_name = 'lidar_robot'  # <--- CHANGE ME
-    urdf_path = "/home/siddharth/vscode/class_work/ROS/curly-succotash/src/lidar_robot/description/robot.urdf"
+    urdf_path = "/root/ros_docker/curly-succotash/src/lidar_robot/description/robot.urdf"
 
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
