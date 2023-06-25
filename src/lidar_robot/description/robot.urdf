@@ -298,8 +298,8 @@
     </sensor>
   </gazebo>
   <joint name="velodyne_base_mount_joint" type="fixed">
-    <origin rpy="0 3.141592653589793 0" xyz="0 0 -0.4"/>
-    <parent link="base_link"/>
+    <origin rpy="0 3.141592653589793 0" xyz="0.2 0 0.35"/>
+    <parent link="chassis"/>
     <child link="velodyne_base_link"/>
   </joint>
   <link name="velodyne_base_link">
@@ -342,6 +342,11 @@
         <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae"/>
       </geometry>
     </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0"/>
+      </geometry>
+    </collision>
   </link>
   <!-- Gazebo requires the velodyne_gazebo_plugins package -->
   <gazebo reference="velodyne">
@@ -361,8 +366,7 @@
             <samples>16</samples>
             <resolution>1</resolution>
             <min_angle>-0.2617993877991494</min_angle>
-            <max_angle>
-                  0.2617993877991494</max_angle>
+            <max_angle> 0.2617993877991494</max_angle>
           </vertical>
         </scan>
         <range>
@@ -377,12 +381,18 @@
         </noise>
       </ray>
       <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
-        <topicName>/points_raw</topicName>
-        <frameName>velodyne</frameName>
+        <ros>
+          <namespace>/velodyne</namespace>
+          <remapping>~/out:=/points_raw</remapping>
+        </ros>
+        <tf_prefix></tf_prefix>
+        <frame_name>velodyne</frame_name>
+        <organize_cloud>False</organize_cloud>
         <min_range>0.9</min_range>
         <max_range>130.0</max_range>
-        <gaussianNoise>0.008</gaussianNoise>
+        <gaussian_noise>0.008</gaussian_noise>
       </plugin>
     </sensor>
   </gazebo>
+  <!-- <xacro:include filename="$(find robot_description)/urdf/IMU/IMU.gazebo.xacro"/> -->
 </robot>
