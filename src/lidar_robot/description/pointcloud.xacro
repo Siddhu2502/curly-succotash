@@ -3,8 +3,8 @@
 
     <xacro:include filename="$(find velodyne_description)/urdf/VLP-16.urdf.xacro"/>
 
-    <xacro:VLP-16 parent="base_link" name="velodyne" topic="/points_raw" hz="10" samples="440">
-        <origin xyz="0 0 0.4" rpy="0 ${M_PI} 0"/>
+    <xacro:VLP-16 parent="chassis" name="velodyne" topic="/points_raw" hz="10" samples="440">
+        <origin xyz="0.2 0 0.35" rpy="0 ${M_PI} 0"/>
     </xacro:VLP-16>
 
 </robot>
